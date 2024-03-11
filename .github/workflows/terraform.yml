@@ -23,6 +23,13 @@ jobs:
         with:
           terraform_version: 1.7.4
 
+      - name: Print Variables
+        run: |
+          echo "AWS_REGION: $AWS_REGION"
+          echo "AWS_BUCKETNAME: $AWS_BUCKETNAME"
+          echo "AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID"
+          echo "AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY"
+
       - name: Terraform Init
         run: terraform init
 
