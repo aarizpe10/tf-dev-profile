@@ -31,7 +31,7 @@ module "records" {
       name    = "hostedSZone"
       type    = "A"
       alias   = {
-        name    = "d-10qxlbvagl.execute-api.${vars.AWS_REGION}.amazonaws.com"
+        name    = "d-10qxlbvagl.execute-api.${var.AWS_REGION}.amazonaws.com"
         zone_id = "Z015395639Y993ORQ7P9"
       }
     },
