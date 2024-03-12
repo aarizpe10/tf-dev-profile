@@ -22,13 +22,6 @@ resource "aws_s3_bucket_website_configuration" "angular-bucket" {
   }
 }
 
-resource "aws_s3_bucket_versioning" "angular-bucket" {
-  bucket = aws_s3_bucket.angular-bucket.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
-
 # S3 bucket ACL access
 
 resource "aws_s3_bucket_ownership_controls" "angular-bucket" {
