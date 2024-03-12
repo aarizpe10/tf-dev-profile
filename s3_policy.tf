@@ -8,7 +8,7 @@ resource "aws_s3_bucket_policy" "bucket-policy" {
   "Statement": [
     {
       "Action": [
-        "s3:*"
+        "s3:PutBucketPolicy"
       ],
       "Effect": "Allow",
       "Resource": "arn:aws:s3:::${aws_s3_bucket.angular-bucket.bucket}/*",
