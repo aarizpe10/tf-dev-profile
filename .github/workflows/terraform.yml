@@ -32,8 +32,3 @@ jobs:
       - name: Terraform Destroy
         run: terraform destroy -var="AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var="AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var="AWS_REGION=${{ vars.AWS_REGION }}" -var="AWS_BUCKETNAME=${{ vars.AWS_BUCKETNAME }}" -destroy
 
-      - name: Terraform Plan
-        run: terraform plan -var="AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var="AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var="AWS_REGION=${{ vars.AWS_REGION }}" -var="AWS_BUCKETNAME=${{ vars.AWS_BUCKETNAME }}"
-
-      - name: Terraform Apply
-        run: terraform apply -var="AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" -var="AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -var="AWS_REGION=${{ vars.AWS_REGION }}" -var="AWS_BUCKETNAME=${{ vars.AWS_BUCKETNAME }}" -auto-approve
