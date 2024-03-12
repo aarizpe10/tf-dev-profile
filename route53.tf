@@ -9,10 +9,6 @@ module "zones" {
         env = "production"
       }
     }
-
-    "myapp.com" = {
-      comment = "myapp.com"
-    }
   }
 
   tags = {
