@@ -4,6 +4,10 @@ resource "aws_s3_bucket" "angular-bucket" {
     Name        = "Angular Dev Bucket Name"
     Environment = "Main"
   }
+
+  lifecycle {
+    prevent_destroy = false
+  }
 }
 
 resource "aws_s3_bucket_website_configuration" "angular-bucket" {
