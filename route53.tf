@@ -14,6 +14,7 @@ module "zones" {
   tags = {
     ManagedBy = "Terraform"
   }
+  vpc_id = "your_vpc_id_here"
 }
 
 module "records" {
@@ -24,17 +25,17 @@ module "records" {
 
   records = [
     {
-      name    = "hostedSZone"
-      type    = "A"
-      alias   = {
+      name = "hostedSZone"
+      type = "A"
+      alias = {
         name    = "d-10qxlbvagl.execute-api.${var.AWS_REGION}.amazonaws.com"
         zone_id = "Z015395639Y993ORQ7P9"
       }
     },
     {
-      name    = ""
-      type    = "A"
-      ttl     = 3600
+      name = ""
+      type = "A"
+      ttl  = 3600
       records = [
         "10.10.10.10",
       ]
