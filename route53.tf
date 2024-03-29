@@ -14,7 +14,6 @@ module "zones" {
   tags = {
     ManagedBy = "Terraform"
   }
-  vpc_id = "your_vpc_id_here"
 }
 
 module "records" {
