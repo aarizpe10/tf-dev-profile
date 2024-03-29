@@ -30,7 +30,7 @@ module "records" {
       }
     },
     {
-      name = "www.adrian-arizpe.com	"
+      name = "www.adrian-arizpe.com"
       type = "A"
       ttl  = 3600
       records = [
