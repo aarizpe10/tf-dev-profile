@@ -27,7 +27,6 @@ module "records" {
       type = "A"
       alias = {
         name    = "d-10qxlbvagl.execute-api.${var.AWS_REGION}.amazonaws.com"
-        zone_id = "Z015395639Y993ORQ7P9"
       }
     },
     {
