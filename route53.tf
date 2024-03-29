@@ -23,7 +23,7 @@ module "records" {
 
   records = [
     {
-      name = "hostedZone"
+      name = "hostedZones"
       type = "A"
       alias = {
         name    = "testings3arizpe.s3-website.${var.AWS_REGION}.amazonaws.com"
