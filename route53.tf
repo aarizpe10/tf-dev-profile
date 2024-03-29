@@ -23,7 +23,7 @@ module "records" {
 
   records = [
     {
-      name = "hostedSZone"
+      name = "hostedZone"
       type = "A"
       alias = {
         name    = "d-10qxlbvagl.execute-api.${var.AWS_REGION}.amazonaws.com"
