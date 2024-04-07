@@ -1,6 +1,5 @@
 resource "aws_s3_bucket" "angular-bucket" {
   bucket = var.AWS_BUCKETNAME
-  policy = aws_s3_bucket_policy.bucket-policy
   tags = {
     Name        = "Angular Dev Bucket Name"
     Environment = "Main"
