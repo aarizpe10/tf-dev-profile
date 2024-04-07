@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "angular-bucket" {
   bucket = var.AWS_BUCKETNAME
+  policy = aws_s3_bucket_policy.bucket-policy
   tags = {
     Name        = "Angular Dev Bucket Name"
     Environment = "Main"
@@ -48,7 +49,4 @@ resource "aws_s3_bucket_acl" "angular-bucket" {
 
   bucket = aws_s3_bucket.angular-bucket.id
   acl    = "public-read"
-}
-output "website_url" {
-  value = "http://${aws_s3_bucket.angular-bucket.bucket}.s3-website.${var.AWS_REGION}.amazonaws.com"
 }
