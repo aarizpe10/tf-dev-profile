@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
         inputs:
           destroy:
-            description: 'Destroy Terraform infrastructure'
+            description: 'Destroy Terraform infra'
             required: false
 jobs:
   terraform:
