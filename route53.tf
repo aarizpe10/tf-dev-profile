@@ -17,8 +17,8 @@ module "zones" {
 }
 
 module "records" {
-  source  = "terraform-aws-modules/route53/aws//modules/records"
-  version = "~> 2.0"
+  source    = "terraform-aws-modules/route53/aws//modules/records"
+  version   = "~> 2.0"
   zone_name = keys(module.zones.route53_zone_zone_id)[0]
 
   records = [
@@ -26,7 +26,7 @@ module "records" {
       name = "hostedZones"
       type = "A"
       alias = {
-        name    = "testings3arizpe.s3-website.${var.AWS_REGION}.amazonaws.com"
+        name = "testings3arizpe.s3-website.${var.AWS_REGION}.amazonaws.com"
       }
     },
     {
