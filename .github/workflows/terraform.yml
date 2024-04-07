@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - inprogress
-
+  workflow_dispatch:
+        inputs:
+          destroy:
+            description: 'Destroy Terraform infrastructure'
+            required: false
 jobs:
   terraform:
     name: Terraform Workflow
