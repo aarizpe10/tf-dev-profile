@@ -38,7 +38,7 @@ jobs:
   terraform_destroy:
     name: Terraform Destroy
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'  # Only run this job when manually triggered
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.destroy == 'true' || failure() }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
