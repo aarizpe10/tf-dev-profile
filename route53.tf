@@ -4,7 +4,7 @@ module "zones" {
 
   zones = {
     "terraform-aws-modules-example.com" = {
-      comment = "terraform-aws-modules-example.com"
+      comment = "hostedZoneTest"
       tags = {
         env = "production"
       }

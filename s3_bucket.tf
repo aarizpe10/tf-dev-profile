@@ -31,7 +31,7 @@ resource "aws_s3_bucket_ownership_controls" "angular-bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "angular-bucket" {
-  bucket = aws_s3_bucket.angular-bucket.id
+  bucket                  = aws_s3_bucket.angular-bucket.id
   block_public_acls       = false
   block_public_policy     = false
   ignore_public_acls      = false
@@ -43,7 +43,6 @@ resource "aws_s3_bucket_acl" "angular-bucket" {
     aws_s3_bucket_ownership_controls.angular-bucket,
     aws_s3_bucket_public_access_block.angular-bucket,
   ]
-
   bucket = aws_s3_bucket.angular-bucket.id
   acl    = "public-read"
 }
