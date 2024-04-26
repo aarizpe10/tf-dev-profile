@@ -14,5 +14,5 @@ provider "aws" {
 }
 
 data "aws_route53_zone" "angular" {
-  zone_id = "Z015395639Y993ORQ7P96"
+  vpc_id = "Z015395639Y993ORQ7P96"
 }
