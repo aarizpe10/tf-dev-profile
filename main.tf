@@ -12,3 +12,7 @@ provider "aws" {
   access_key = var.AWS_ACCESS_KEY_ID
   secret_key = var.AWS_SECRET_ACCESS_KEY
 }
+
+data "aws_route53_zone" "this" {
+  vpc_id = "Z015395639Y993ORQ7P96"
+}
