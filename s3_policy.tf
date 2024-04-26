@@ -7,7 +7,7 @@ resource "aws_s3_bucket_policy" "bucket-policy" {
       {
         Effect    = "Allow"
         Principal = {
-          AWS = "arn:aws:iam::405935039529:group/Admins" 
+          AWS = "arn:aws:iam::405935039529:group/Adrian" 
         }
         Action    = "s3:*"
         Resource  = "${aws_s3_bucket.angular-bucket.arn}/*"
