@@ -25,7 +25,6 @@ module "records" {
   zone_name = keys(module.zones.route53_zone_zone_id)[0]
   zone_id   = data.aws_route53_zone.angular.zone_id
 
-
   records = [
     {
       name = "hostedZones"
