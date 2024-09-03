@@ -1,46 +1,10 @@
-module "zones" {
-  source  = "terraform-aws-modules/route53/aws//modules/zones"
-  version = "~> 2.0"
-
-  zones = {
-    "adrian-arizpe-test.com" = {
-      comment = "hostedZoneTest"
-      tags = {
-        env = "production"
-      }
-    }
-  }
-
-  tags = {
-    ManagedBy = "Terraform-Adrian"
-  }
+resource "aws_route53_zone" "example" {
+  name = "adrian-arizpetest.com"
 }
-
-  data "aws_route53_zone" "angular" {
-  name = "adrian-arizpe-test.com"
-}
-module "records" {
-  source    = "terraform-aws-modules/route53/aws//modules/records"
-  version   = "~> 2.0"
-  zone_name = keys(module.zones.route53_zone_zone_id)[0]
-  zone_id   = data.aws_route53_zone.angular.zone_id
-
-  records = [
-    {
-      name = "hostedZones"
-      type = "A"
-      alias = {
-        name = "testings3arizpe.s3-website.${var.AWS_REGION}.amazonaws.com"
-      }
-    },
-    {
-      name = "www.adrian-arizpe.com"
-      type = "A"
-      ttl  = 3600
-      records = [
-        "10.10.10.10",
-      ]
-    },
-  ]
-  depends_on = [module.zones]
+resource "aws_route53_record" "angular" {
+  zone_id = aws_route53_zone.primary.zone_id
+  name    = "adrian-arizpetest.com"
+  type    = "A"
+  ttl     = 300
+  records = "adrian-arizpetest.com"
 }
