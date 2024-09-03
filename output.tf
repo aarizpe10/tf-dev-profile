@@ -1,4 +1,4 @@
-output "zone_id" {
-  value = module.zones
-}
+# output "zone_id" {
+#   value = module.zones
+# }
 
