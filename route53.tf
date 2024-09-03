@@ -6,5 +6,5 @@ resource "aws_route53_record" "angular" {
   name    = "adrian-arizpetest.com"
   type    = "A"
   ttl     = 300
-  records = "adrian-arizpetest.com"
+  # records = "adrian-arizpetest.com"
 }
