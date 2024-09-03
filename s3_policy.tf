@@ -9,7 +9,7 @@ resource "aws_s3_bucket_policy" "bucket-policy" {
         "Effect" : "Allow",
         "Principal" : "*",
         "Action" : "s3:*",
-        "Resource" : "arn:aws:s3:::${AWS_BUCKETNAME}/*"
+        "Resource" : "arn:aws:s3:::testings3arizpe/*"
       }
     ]
   })
