@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_acl" "b_acl" {
-  bucket = aws_s3_bucket.b.id
+  bucket = aws_s3_bucket.angular-bucket.id
   acl    = "private"
 }
 
@@ -43,7 +43,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     viewer_protocol_policy = "allow-all"
     min_ttl                = 0
     default_ttl            = 3600
-    max_ttl                = 86400
+    max_ttl                = 300
   }
 
   # Cache behavior with precedence 0
@@ -86,7 +86,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
     min_ttl                = 0
     default_ttl            = 3600
-    max_ttl                = 86400
+    max_ttl                = 300
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
   }
