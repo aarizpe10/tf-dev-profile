@@ -9,7 +9,7 @@ locals {
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name              = aws_s3_bucket.angular-bucket.bucket_regional_domain_name
+    domain_name              = "testings3arizpe.s3-website.us-east-2.amazonaws.com"
     # origin_access_control_id = aws_cloudfront_origin_access_control.default.id
     origin_id                = local.s3_origin_id
   }
