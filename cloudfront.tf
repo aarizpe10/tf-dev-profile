@@ -1,8 +1,3 @@
-resource "aws_s3_bucket_acl" "angular-bucket" {
-  bucket = aws_s3_bucket.angular-bucket-acl.id
-  acl    = "private"
-}
-
 locals {
   s3_origin_id = "myS3Origin"
 }
