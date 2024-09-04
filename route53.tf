@@ -6,5 +6,8 @@ resource "aws_route53_record" "angular" {
   name    = "adrian-arizpetest.com"
   type    = "A"
   ttl     = 300
-  records = ["www.adrian-arizpe.com"]
+  records = [
+    aws_route53_zone.example.name_servers[0],
+    aws_route53_zone.example.name_servers[1]
+  ]
 }
