@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_acl" "angular-bucket" {
-  bucket = aws_s3_bucket.angular-bucket.id
+  bucket = aws_s3_bucket.angular-bucket-acl.id
   acl    = "private"
 }
 
