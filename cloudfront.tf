@@ -4,7 +4,7 @@ locals {
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name              = aws_acm_certificate.cert.domain_name
+    domain_name              = "www.adrian-arizpetest.com.s3.us-east-2.amazonaws.com"
     # origin_access_control_id = aws_cloudfront_origin_access_control.default.id
     origin_id                = local.s3_origin_id
   }
