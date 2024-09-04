@@ -7,7 +7,7 @@ resource "aws_route53_record" "angular" {
   type    = "A"
   ttl     = 300
   records = [
-    aws_route53_zone.example.name_servers[0],
-    aws_route53_zone.example.name_servers[1]
+    aws_route53_zone.angular.name_servers[0],
+    aws_route53_zone.angular.name_servers[1]
   ]
 }
