@@ -3,5 +3,5 @@
 # }
 
 output "angular-bucketName" {
-  value = aws_s3_bucket.angular-bucket.name
+  value = aws_s3_bucket.angular-bucket
 }
