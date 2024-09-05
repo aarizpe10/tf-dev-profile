@@ -9,7 +9,7 @@ resource "aws_s3_bucket_policy" "bucket-policy" {
         "Effect" : "Allow",
         "Principal" : "*",
         "Action" : "s3:*",
-        "Resource" : "arn:aws:s3:::${var.AWS_BUCKETNAME}/*"
+        "Resource" : "arn:aws:s3:::${aws_s3_bucket.angular-bucket.name}/*"
       }
     ]
   })
