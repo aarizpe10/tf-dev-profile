@@ -20,7 +20,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     prefix          = "myprefix"
   }
 
-  aliases = ["www.adrian-arizpe.com", "adrian-arizpe.com"]
+  aliases = ["www.adrian-arizpetest.com", "adrian-arizpetest.com"]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
