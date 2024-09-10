@@ -21,7 +21,7 @@ resource "aws_s3_bucket_website_configuration" "angular-bucket" {
     key = "error.html"
   }
 }
-# S3 bucket ACL access
+# S3 bucket ACL access 
 
 resource "aws_s3_bucket_ownership_controls" "angular-bucket" {
   bucket = aws_s3_bucket.angular-bucket.id
