@@ -98,11 +98,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = resource.aws_acm_certificate.arn
+    acm_certificate_arn = resource.aws_acm_certificate.cert.arn
   }
 }
 
 resource "aws_acm_certificate_validation" "my_cert_validation" {
-  certificate_arn         = aws_acm_certificate.my_cert.arn
+  certificate_arn         = aws_acm_certificate.cert.arn
   validation_record_fqdns = ["${aws_route53_record.angular.fqdn}"]
 }

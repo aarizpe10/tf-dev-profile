@@ -7,5 +7,5 @@ output "angular-bucketName" {
 }
 
 output "certARN" {
-  value = resource.aws_acm_certificate.arn
+  value = resource.aws_acm_certificate.cert.arn
 }
