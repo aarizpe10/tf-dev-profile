@@ -98,7 +98,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = true
+    acm_certificate_arn = resource.aws_acm_certificate.arn
   }
 }
 
