@@ -5,8 +5,8 @@ locals {
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name = "www.adrian-arizpetest.com.s3.us-east-1.amazonaws.com"
-    # origin_access_control_id = aws_cloudfront_origin_access_control.default.id
     origin_id = local.s3_origin_id
+    
   }
 
   enabled             = true
@@ -41,7 +41,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     max_ttl                = 3800
   }
 
-  # Cache behavior with precedence 0
   ordered_cache_behavior {
     path_pattern     = "/content/immutable/*"
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -64,7 +63,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     viewer_protocol_policy = "redirect-to-https"
   }
 
-  # Cache behavior with precedence 1
   ordered_cache_behavior {
     path_pattern     = "/content/*"
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -100,6 +98,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn  = true
   }
+}
+
+resource "aws_acm_certificate_validation" "my_cert_validation" {
+  provider                = "aws.acm_provider" # because ACM needs to be used in the "us-east-1" region
+  certificate_arn         = "${aws_acm_certificate.my_cert.arn}"
+  validation_record_fqdns = [ "${aws_route53_record.my_cert_validation.fqdn}" ]
 }
