@@ -5,8 +5,8 @@ locals {
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name = "www.adrian-arizpetest.com.s3.us-east-1.amazonaws.com"
-    origin_id = local.s3_origin_id
-    
+    origin_id   = local.s3_origin_id
+
   }
 
   enabled             = true
@@ -98,12 +98,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn  = true
+    acm_certificate_arn = true
   }
 }
 
 resource "aws_acm_certificate_validation" "my_cert_validation" {
-  provider                = "aws.acm_provider" # because ACM needs to be used in the "us-east-1" region
-  certificate_arn         = "${aws_acm_certificate.my_cert.arn}"
-  validation_record_fqdns = [ "${aws_route53_record.my_cert_validation.fqdn}" ]
+  certificate_arn         = aws_acm_certificate.my_cert.arn
+  validation_record_fqdns = ["${aws_route53_record.angular.fqdn}"]
 }
