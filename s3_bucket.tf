@@ -37,7 +37,6 @@ resource "aws_s3_bucket_public_access_block" "angular-bucket" {
   ignore_public_acls      = false
   restrict_public_buckets = false
 }
-
 resource "aws_s3_bucket_acl" "angular-bucket-acl" {
   depends_on = [
     aws_s3_bucket_ownership_controls.angular-bucket,
