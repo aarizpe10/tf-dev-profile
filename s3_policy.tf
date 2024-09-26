@@ -1,4 +1,4 @@
-# S3 bucket policy
+# S3 bucket policy to allow all actions on the bucket
 resource "aws_s3_bucket_policy" "bucket-policy" {
   bucket = aws_s3_bucket.angular-bucket.id
   policy = jsonencode({
