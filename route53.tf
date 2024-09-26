@@ -10,3 +10,5 @@ resource "aws_route53_record" "angular" {
     aws_route53_zone.angular.name_servers[0]
   ]
 }
+
+

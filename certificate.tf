@@ -24,3 +24,4 @@ resource "aws_acm_certificate" "cert" {
   private_key      = tls_private_key.keyAlgorithm.private_key_pem
   certificate_body = tls_self_signed_cert.angularDev.cert_pem
 }
+
