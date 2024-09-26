@@ -5,15 +5,7 @@ terraform {
       version = "5.40.0"
     }
   }
-}
 
-provider "aws" {
-  region     = var.AWS_REGION
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_ACCESS_KEY
-}
-
-terraform {
   backend "s3" {
     bucket         = aws_s3_bucket.backend_bucket.id
     key            = "backend/terraform.tfstate"
@@ -21,6 +13,13 @@ terraform {
     dynamodb_table = "terraform-lock"
     encrypt        = true
   }
+
+}
+
+provider "aws" {
+  region     = var.AWS_REGION
+  access_key = var.AWS_ACCESS_KEY_ID
+  secret_key = var.AWS_SECRET_ACCESS_KEY
 }
 
 
