@@ -19,3 +19,8 @@ variable "AWS_SECRET_ACCESS_KEY" {
   type        = string
   sensitive   = true
 }
+
+variable "AWS_BACKEND_BUCKET" {
+  description = "Name of the s3 Bucket for backend"
+  type        = string
+}
