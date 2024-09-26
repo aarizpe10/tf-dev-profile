@@ -1,5 +1,5 @@
 # S3 bucket policy to allow all actions on the bucket
-resource "aws_s3_bucket_policy" "bucket-policy" {
+resource "aws_s3_bucket_policy" "backend_bucket_policy" {
   bucket = aws_s3_bucket.backend_bucket.id
   policy = jsonencode({
 
