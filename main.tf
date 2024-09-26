@@ -15,9 +15,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "my-terraform-state-bucket"
-    key            = "path/to/my/key"
-    region         = "us-west-2"
+    bucket         = aws_s3_bucket.backend_bucket.id
+    key            = "backend/terraform.tfstate"
+    region         = "us-east-1"
     dynamodb_table = "terraform-lock"
     encrypt        = true
   }
